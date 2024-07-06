@@ -1,5 +1,6 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
 	This file is part of the uClibc++ Library.
+
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
 	License as published by the Free Software Foundation; either
@@ -15,7 +16,6 @@
 	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-
 #ifndef __STD_HEADER_FUNCTIONAL
 #define __STD_HEADER_FUNCTIONAL 1
 
@@ -23,7 +23,7 @@
 
 #pragma GCC visibility push(default)
 
-namespace std{
+namespace std {
 
 	template <class Arg, class Result> struct unary_function;
 	template <class Arg1, class Arg2, class Result> struct binary_function;
@@ -50,7 +50,6 @@ namespace std{
 	template <class Predicate> unary_negate<Predicate>  not1(const Predicate&);
 	template <class Predicate> struct binary_negate;
 	template <class Predicate> binary_negate<Predicate> not2(const Predicate&);
-
 
 	template <class Operation> class binder1st;
 	template <class Operation, class T> binder1st<Operation> bind1st(const Operation&, const T&);
@@ -80,7 +79,6 @@ namespace std{
 		typedef Arg argument_type;
 		typedef Result result_type;
 	};
-
 
 	template <class Arg1, class Arg2, class Result> struct _UCXXEXPORT binary_function{
 		typedef Arg1   first_argument_type;
@@ -190,11 +188,9 @@ namespace std{
 		Predicate p;
 	};
 
-
 	template <class Predicate> _UCXXEXPORT unary_negate<Predicate> not1(const Predicate& pred){
 		return unary_negate<Predicate>(pred);
 	}
-
 
 	template <class Predicate> class _UCXXEXPORT binary_negate : public
 		binary_function<typename Predicate::first_argument_type,
@@ -211,11 +207,9 @@ namespace std{
 		Predicate p;
 	};
 
-
 	template <class Predicate> _UCXXEXPORT binary_negate<Predicate> not2(const Predicate& pred){
 		return binary_negate<Predicate>(pred);
 	}
-
 
 	template <class Operation> class _UCXXEXPORT binder1st
 		: public unary_function<typename Operation::second_argument_type,
@@ -231,11 +225,9 @@ namespace std{
 		}
 	};
 
-
 	template <class Operation, class T> _UCXXEXPORT binder1st<Operation> bind1st(const Operation& op, const T& x){
 		return binder1st<Operation>(op, typename Operation::first_argument_type(x));
 	}
-
 
 	template <class Operation> class _UCXXEXPORT binder2nd
 		: public unary_function<typename Operation::first_argument_type,
@@ -251,13 +243,11 @@ namespace std{
 		}
 	};
 
-
 	template <class Operation, class T> _UCXXEXPORT
 		binder2nd<Operation> bind2nd(const Operation& op, const T& x)
 	{
 		return binder2nd<Operation>(op, typename Operation::second_argument_type(x));
 	}
-
 
 	template <class Arg, class Result> class _UCXXEXPORT
 		pointer_to_unary_function : public unary_function<Arg, Result>
@@ -271,11 +261,9 @@ namespace std{
 		}
 	};
 
-
 	template <class Arg, class Result> _UCXXEXPORT pointer_to_unary_function<Arg, Result> ptr_fun(Result (*f)(Arg)){
 		return pointer_to_unary_function<Arg, Result>(f);
 	}
-
 
 	template <class Arg1, class Arg2, class Result>	class _UCXXEXPORT
 		pointer_to_binary_function : public binary_function<Arg1,Arg2,Result>
@@ -295,7 +283,6 @@ namespace std{
 		return pointer_to_binary_function<Arg1,Arg2,Result>(f);
 	}
 
-
 	template <class S, class T> class _UCXXEXPORT mem_fun_t
 		: public unary_function<T*, S>
 	{
@@ -305,7 +292,6 @@ namespace std{
 	private:
 		S (T::*m)();
 	};
-
 
 	template <class S, class T, class A> class _UCXXEXPORT mem_fun1_t
 		: public binary_function<T*, A, S>
@@ -317,7 +303,6 @@ namespace std{
 		S (T::*m)(A);
 	};
 
-
 	template <class S, class T> class _UCXXEXPORT const_mem_fun_t
 		: public unary_function<const T*, S>
 	{
@@ -328,7 +313,6 @@ namespace std{
 		S (T::*m)() const;
 	};
 
-
 	template <class S, class T, class A> class _UCXXEXPORT const_mem_fun1_t
 		: public binary_function<T*, A, S>
 	{
@@ -338,7 +322,6 @@ namespace std{
 	private:
 		S (T::*m)(A) const;
 	};
-
 
 	template<class S, class T> _UCXXEXPORT mem_fun_t<S,T> mem_fun(S (T::*f)()){
 		return mem_fun_t<S, T>(f);
@@ -384,9 +367,7 @@ namespace std{
 		return mem_fun1_ref_t<S,T,A>(f);
 	}
 
-
 }
-
 
 //These are SGI extensions which are checked for by some conformance checks.  They
 // are *NOT* part of the C++ standard, however
@@ -434,6 +415,3 @@ compose2(const Op1 & fn1, const Op2 & fn2, const Op3 & fn3){
 #pragma GCC visibility pop
 
 #endif
-
-
-

@@ -19,24 +19,6 @@
 
 #include "deque"
 
-
-namespace std{
-
-
-
-
-
-
-
-
-
-
-
-
-
+namespace std {
 
 }
-
-
-
-

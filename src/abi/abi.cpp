@@ -28,7 +28,7 @@
 
 extern "C" {
 
-#if defined(ARDUINO)
+#ifdef ARDUINO
         /* Arduino defines some of these.
 	 * There can be link issues if they're redefined
          */

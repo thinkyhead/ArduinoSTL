@@ -1,6 +1,7 @@
 /*	Copyright (C) 2005 Garrett A. Kajmowicz
 
 	This file is part of the uClibc++ Library.
+
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
 	License as published by the Free Software Foundation; either
@@ -27,7 +28,7 @@
 
 #pragma GCC visibility push(default)
 
-namespace std{
+namespace std {
 
 	struct _UCXXEXPORT __true_type{};
 	struct _UCXXEXPORT __false_type{};
@@ -82,11 +83,8 @@ namespace std{
 		typedef __true_type value;
 	};
 
-
-
 }
 
 #pragma GCC visibility pop
 
 #endif
-

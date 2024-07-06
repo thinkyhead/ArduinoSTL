@@ -1,5 +1,6 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
 	This file is part of the uClibc++ Library.
+
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
 	License as published by the Free Software Foundation; either
@@ -29,7 +30,7 @@
 
 #pragma GCC visibility push(default)
 
-namespace std{
+namespace std {
 
 	// subclause _lib.alg.nonmodifying_, non-modifying sequence operations:
 	template<class InputIterator, class Function> _UCXXEXPORT
@@ -41,7 +42,6 @@ namespace std{
 		}
 		return f;
 	}
-
 
 	template<class InputIterator, class T> _UCXXEXPORT
 		InputIterator find(InputIterator first, InputIterator last, const T& value)
@@ -277,7 +277,6 @@ namespace std{
 		return search(first1, last1, first2, last2, c);
 	}
 
-
 	template<class ForwardIterator1, class ForwardIterator2, class BinaryPredicate> _UCXXEXPORT
 		ForwardIterator1
 		search(ForwardIterator1 first1, ForwardIterator1 last1,
@@ -302,7 +301,6 @@ namespace std{
 		return last1;
 	}
 
-
 	template<class ForwardIterator, class Size, class T> _UCXXEXPORT
 		ForwardIterator
 		search_n(ForwardIterator first, ForwardIterator last, Size count, const T& value)
@@ -324,7 +322,6 @@ namespace std{
 		}
 		return first;
 	}
-
 
 	template<class ForwardIterator, class Size, class T, class BinaryPredicate> _UCXXEXPORT
 		ForwardIterator
@@ -403,7 +400,6 @@ namespace std{
 		*b = temp;
 	}
 
-
 	template<class ForwardIterator1, class ForwardIterator2> _UCXXEXPORT
 		ForwardIterator2
 		swap_ranges(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2)
@@ -415,7 +411,6 @@ namespace std{
 		}
 		return first2;
 	}
-
 
 	template<class InputIterator, class OutputIterator, class UnaryOperation> _UCXXEXPORT
 		OutputIterator
@@ -430,7 +425,6 @@ namespace std{
 		return result;
 	}
 
-
 	template<class InputIterator1, class InputIterator2, class OutputIterator, class BinaryOperation> _UCXXEXPORT
 		OutputIterator transform(InputIterator1 first1, InputIterator1 last1,
 			InputIterator2 first2, OutputIterator result,
@@ -444,7 +438,6 @@ namespace std{
 		}
 		return result;
 	}
-
 
 	template<class ForwardIterator, class T> _UCXXEXPORT
 		void
@@ -471,7 +464,6 @@ namespace std{
 			++first;
 		}
 	}
-
 
 	template<class InputIterator, class OutputIterator, class T> _UCXXEXPORT
 		OutputIterator
@@ -582,7 +574,6 @@ namespace std{
 		}
 		return first;
 	}
-
 
 	template<class InputIterator, class OutputIterator, class T> _UCXXEXPORT
 		OutputIterator
@@ -767,7 +758,6 @@ namespace std{
 		}
 		return result;
 	}
-
 
 	template<class RandomAccessIterator> _UCXXEXPORT
 		void
@@ -1002,7 +992,6 @@ namespace std{
 		return upper_bound(first, last, value, c);
 	}
 
-
 	template<class ForwardIterator, class T, class Compare> _UCXXEXPORT
 		ForwardIterator upper_bound(ForwardIterator first, ForwardIterator last,
 			const T& value, Compare comp)
@@ -1041,7 +1030,6 @@ namespace std{
 		}
 		return last;
 	}
-
 
 	template<class ForwardIterator, class T> _UCXXEXPORT
 		pair<ForwardIterator, ForwardIterator>
@@ -1487,7 +1475,6 @@ namespace std{
 		sort( first, last, comp);
 	}
 
-
 	// _lib.alg.min.max_, minimum and maximum:
 	template<class T> _UCXXEXPORT
 		const T& min(const T& a, const T& b)
@@ -1619,7 +1606,6 @@ namespace std{
 			return true;
 		}
 
-
 		//This part of the algorithm copied from G++ header files ver. 3.4.2
 		i = last;
 		--i;
@@ -1641,7 +1627,6 @@ namespace std{
 				return false;
 			}
 		}
-
 
 	}
 
@@ -1701,6 +1686,3 @@ namespace std{
 #pragma GCC visibility pop
 
 #endif
-
-
-

@@ -1,5 +1,4 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
-
 	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
@@ -22,7 +21,7 @@
 
 #ifdef __UCLIBCXX_EXCEPTION_SUPPORT__
 
-namespace std{
+namespace std {
 
 	_UCXXEXPORT logic_error::logic_error() _UCXX_USE_NOEXCEPT : mstring(){
 
@@ -36,13 +35,12 @@ namespace std{
 		return mstring.c_str();
 	}
 
-
 	_UCXXEXPORT out_of_range::out_of_range() : logic_error(){
 
 	}
 
 	_UCXXEXPORT out_of_range::out_of_range(const string & what_arg) : logic_error(what_arg) {
-	
+
 	}
 
 	_UCXXEXPORT runtime_error::runtime_error() : mstring(){
@@ -60,4 +58,3 @@ namespace std{
 }
 
 #endif
-

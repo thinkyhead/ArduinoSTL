@@ -18,10 +18,6 @@
 
 #include "queue"
 
-
-namespace std{
-
-
-
+namespace std {
 
 }

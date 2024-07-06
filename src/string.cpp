@@ -1,5 +1,4 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
-
 	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
@@ -26,7 +25,7 @@
 #include <string.h>
 #include "ostream"
 
-namespace std{
+namespace std {
 
 #ifdef __UCLIBCXX_EXPAND_STRING_CHAR__
 
@@ -89,7 +88,6 @@ namespace std{
 	template _UCXXEXPORT bool operator> (const string & lhs, const string & rhs);
 	template _UCXXEXPORT bool operator< (const string & lhs, const string & rhs);
 
-
 //Functions dependent upon OSTREAM
 #ifdef __UCLIBCXX_EXPAND_OSTREAM_CHAR__
 
@@ -97,15 +95,12 @@ template _UCXXEXPORT ostream & operator<<(ostream & os, const string & str);
 
 #endif
 
-
 //Functions dependent upon ISTREAM
 #ifdef __UCLIBCXX_EXPAND_ISTREAM_CHAR__
 
 template _UCXXEXPORT istream & operator>>(istream & is, string & str);
 
-
 #endif
-
 
 #endif
 

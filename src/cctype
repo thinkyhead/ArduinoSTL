@@ -1,6 +1,7 @@
 /*	Copyright (C) 2006 Garrett A. Kajmowicz
 
 	This file is part of the uClibc++ Library.
+
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
 	License as published by the Free Software Foundation; either
@@ -18,7 +19,7 @@
 
 #include <ctype.h>
 
-namespace std{
+namespace std {
 
 	using ::isalnum;
 	using ::isalpha;

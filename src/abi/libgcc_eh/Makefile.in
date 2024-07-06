@@ -10,7 +10,6 @@ ifeq ($(filter $(noconfig_targets),$(MAKECMDGOALS)),)
 -include $(LIBGCC_EH_DEP)
 endif
 
-
 ifneq ($(libgcc_eh-y),)
 $(libgcc_eh-y): $(LIBGCC_EH)
 endif

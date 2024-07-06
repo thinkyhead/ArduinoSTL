@@ -16,8 +16,6 @@
 	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-
-
 #include "memory"
 #include "utility"
 #include "iterator"
@@ -30,12 +28,10 @@
 
 #pragma GCC visibility push(default)
 
-namespace std{
-
+namespace std {
 
 template<class Key, class Compare = less<Key>, class Allocator = allocator<Key> > class set;
 template<class Key, class Compare = less<Key>, class Allocator = allocator<Key> > class multiset;
-
 
 /* This is the implementation for the set container.  As noted above, it deviates
  * from ISO spec by deriving from a base class in order to reduce code redundancy.
@@ -44,9 +40,7 @@ template<class Key, class Compare = less<Key>, class Allocator = allocator<Key> 
  * the specifications too much to be worth the risk.
  */
 
-
 //Implementation of set
-
 
 template<class Key, class Compare, class Allocator> class _UCXXEXPORT set
 	: public __single_associative<Key, Key, Compare, Allocator>
@@ -103,7 +97,6 @@ public:
 	using base::size;
 	using base::max_size;
 
-
 	using base::find;
 	using base::count;
 	using base::lower_bound;
@@ -114,9 +107,7 @@ protected:
 
 };
 
-
 //Implementation of multiset
-
 
 template<class Key, class Compare, class Allocator> class _UCXXEXPORT multiset
 	: public __multi_associative<Key, Key, Compare, Allocator>
@@ -152,7 +143,6 @@ public:
 		const Compare& comp = Compare(), const Allocator& al = Allocator())
 		: base(first, last, comp, al, v_t_k) {  }
 
-
 	multiset(const multiset<Key, Compare, Allocator>& x) : base(x) {  }
 	~multiset() {  }
 
@@ -178,11 +168,9 @@ public:
 	using base::upper_bound;
 	using base::equal_range;
 
-
 protected:
 
 };
-
 
 /* Non-member functions.  These are at the end because they are not associated with any
    particular class.  These will be implemented as I figure out exactly what all of
@@ -277,7 +265,6 @@ protected:
 	{
 		x.swap(y);
 	}
-
 
 	template <class Key, class Compare, class Allocator> _UCXXEXPORT bool operator==
 		(const multiset<Key,Compare,Allocator>& x, const multiset<Key,Compare,Allocator>& y)
@@ -396,11 +383,8 @@ protected:
 		x.swap(y);
 	}
 
-
-
 }
 
 #pragma GCC visibility pop
 
 #endif
-

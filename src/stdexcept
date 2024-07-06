@@ -1,5 +1,4 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
-
 	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
@@ -21,15 +20,15 @@
 #include "exception"
 #include "string"
 
-#ifndef HEADER_STD_EXCEPTIONS
-#define HEADER_STD_EXCEPTIONS 1
+#ifndef __HEADER_STD_EXCEPTIONS
+#define __HEADER_STD_EXCEPTIONS 1
 
 //Don't include support if not needed
 #ifdef __UCLIBCXX_EXCEPTION_SUPPORT__
 
 #pragma GCC visibility push(default)
 
-namespace std{
+namespace std {
 
 //typedef basic_string<char> string;
 
@@ -43,7 +42,7 @@ public:
 	virtual ~logic_error() _UCXX_USE_NOEXCEPT {}
 	virtual const char * what() const _UCXX_USE_NOEXCEPT;
 
-};	
+};
 
 class _UCXXEXPORT domain_error : public logic_error {
 public:
@@ -92,7 +91,6 @@ public:
 	virtual ~range_error() _UCXX_USE_NOEXCEPT{ }
 };
 
-
 class _UCXXEXPORT overflow_error : public runtime_error{
 public:
 	overflow_error() : runtime_error(){}
@@ -106,8 +104,6 @@ public:
 	underflow_error(const string& what_arg) : runtime_error(what_arg) {}
 	virtual ~underflow_error() _UCXX_USE_NOEXCEPT{}
 };
-
-
 
 }
 

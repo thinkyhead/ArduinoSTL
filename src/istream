@@ -28,7 +28,7 @@
 
 #pragma GCC visibility push(default)
 
-namespace std{
+namespace std {
 
 	typedef basic_istream<char> istream;
 
@@ -404,7 +404,6 @@ namespace std{
 		return *this;
 	}
 
-
 	template <class charT, class traits> _UCXXEXPORT basic_istream<charT,traits>&
 		basic_istream<charT,traits>::operator>>(bool& n)
 	{
@@ -593,10 +592,8 @@ namespace std{
 		return is;
 	}
 
-
 #ifdef __UCLIBCXX_EXPAND_ISTREAM_CHAR__
 #ifndef __UCLIBCXX_COMPILE_ISTREAM__
-
 
 	template <> _UCXXEXPORT istream & basic_istream<char, char_traits<char> >::get(char & c);
 	template <> _UCXXEXPORT istream::int_type basic_istream<char, char_traits<char> >::get();
@@ -628,4 +625,3 @@ namespace std{
 #pragma GCC visibility pop
 
 #endif
-

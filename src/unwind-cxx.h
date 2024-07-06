@@ -58,10 +58,10 @@ namespace __cxxabiv1
 // followed by the exception object itself.
 
 struct __cxa_exception
-{ 
+{
   // Manage the exception object itself.
   std::type_info *exceptionType;
-  void (*exceptionDestructor)(void *); 
+  void (*exceptionDestructor)(void *);
 
   // The C++ standard has entertaining rules wrt calling set_terminate
   // and set_unexpected in the middle of the exception cleanup process.
@@ -127,14 +127,12 @@ struct __cxa_dependent_exception
   _Unwind_Exception unwindHeader;
 };
 
-
 // Each thread in a C++ program has access to a __cxa_eh_globals object.
 struct __cxa_eh_globals
 {
   __cxa_exception *caughtExceptions;
   unsigned int uncaughtExceptions;
 };
-
 
 // The __cxa_eh_globals for the current thread can be obtained by using
 // either of the following functions.  The "fast" version assumes at least
@@ -189,7 +187,7 @@ extern std::unexpected_handler __unexpected_handler;
 // This is the exception class we report -- "GNUCC++\0".
 const _Unwind_Exception_Class __gxx_exception_class
 #ifndef __ARM_EABI_UNWINDER__
-= ((((((((_Unwind_Exception_Class) 'G' 
+= ((((((((_Unwind_Exception_Class) 'G'
 	 << 8 | (_Unwind_Exception_Class) 'N')
 	<< 8 | (_Unwind_Exception_Class) 'U')
        << 8 | (_Unwind_Exception_Class) 'C')

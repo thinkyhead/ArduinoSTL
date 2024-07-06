@@ -1,5 +1,4 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
-
 	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
@@ -30,7 +29,7 @@
 
 #pragma GCC visibility push(default)
 
-namespace std{
+namespace std {
 
 int arduinoPrintFloat(double number, uint8_t digits, char *buffer, size_t buffer_size);
 
@@ -45,8 +44,6 @@ int arduinoPrintFloat(double number, uint8_t digits, char *buffer, size_t buffer
 	 * maintenance required.  We specialized for char because wchar and others
 	 * require different scanf functions
 	 */
-
-
 
 	template <class traits, class charT, class dataType> class _UCXXEXPORT __ostream_printout{
 	public:
@@ -239,7 +236,6 @@ int arduinoPrintFloat(double number, uint8_t digits, char *buffer, size_t buffer
 			}
 		}
 	};
-
 
 #endif // !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
 
@@ -440,7 +436,6 @@ int arduinoPrintFloat(double number, uint8_t digits, char *buffer, size_t buffer
 		}
 	};
 
-
 #endif // !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
 
 	template <class traits> class _UCXXEXPORT __ostream_printout<traits, wchar_t, double>{
@@ -498,6 +493,3 @@ int arduinoPrintFloat(double number, uint8_t digits, char *buffer, size_t buffer
 #pragma GCC visibility pop
 
 #endif
-
-
-

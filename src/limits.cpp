@@ -19,7 +19,6 @@
 
 #include "limits"
 
-namespace std{
-
+namespace std {
 
 }

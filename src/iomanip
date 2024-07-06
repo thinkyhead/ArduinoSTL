@@ -25,7 +25,7 @@
 
 #pragma GCC visibility push(default)
 
-namespace std{
+namespace std {
 
 // These are the helper classes which we are going to be using to
 // hold the required data
@@ -66,7 +66,6 @@ public:
 	_UCXXEXPORT __setw(int n): width(n) {  }
 };
 
-
 //Actual manipulator functions
 
 inline __resetiosflags resetiosflags(ios_base::fmtflags mask){
@@ -92,7 +91,6 @@ inline __setprecision setprecision(int n){
 inline __setw setw(int n){
 	return __setw(n);
 }
-
 
 //How to handle interaction with [i|o]stream classes
 
@@ -160,11 +158,8 @@ template<class Ch, class Tr> _UCXXEXPORT basic_ostream<Ch, Tr>&
 	return os;
 }
 
-
-
 }
 
 #pragma GCC visibility pop
 
 #endif
-

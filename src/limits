@@ -25,7 +25,7 @@
 
 #pragma GCC visibility push(default)
 
-namespace std{
+namespace std {
 
 enum float_round_style{
 	round_indeterminate		=-1,
@@ -98,11 +98,6 @@ template <> struct __bits_to_base_10<127>{
 template <> struct __bits_to_base_10<128>{
 	static const int size = 38;
 };
-
-
-
-
-
 
 template <class T> class numeric_limits {
 public:
@@ -651,10 +646,6 @@ public:
 	static numeric_type quiet_NaN () { return -1; } //How do I properly get this?
 	static numeric_type signaling_NaN () { return -1; } //How do I properly get this?
 };
-
-
-
-
 
 }
 

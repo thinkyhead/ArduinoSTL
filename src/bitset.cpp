@@ -19,8 +19,6 @@
 
 #include "bitset"
 
-namespace std{
-
-
+namespace std {
 
 }

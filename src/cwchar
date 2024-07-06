@@ -1,6 +1,7 @@
 /*	Copyright (C) 2006 Garrett A. Kajmowicz
 
 	This file is part of the uClibc++ Library.
+
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
 	License as published by the Free Software Foundation version 2.1
@@ -21,8 +22,7 @@
 #ifndef __HEADER_CWCHAR
 #define __HEADER_CWCHAR 1
 
-
-namespace std{
+namespace std {
 	using ::mbstate_t;
 	using ::wint_t;
 
@@ -80,7 +80,4 @@ namespace std{
 	using ::wscanf;
 }
 
-
-
 #endif
-

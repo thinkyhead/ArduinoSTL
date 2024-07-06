@@ -1,15 +1,14 @@
 # ArduinoSTL
 
-This is an implementation of a C++ standard library packaged as an Arduino library. The library supports teaching my CS-11M class by adding key C++ features into the Arduino environment. 
+This is an implementation of a C++ standard library packaged as an Arduino library. The library supports teaching my CS-11M class by adding key C++ features into the Arduino environment.
 
 The library is ported from uClibc++:
 
 http://git.uclibc.org/uClibc++
 
-With a streams implementation from Andy Brown's Arduino Library: 
+With a streams implementation from Andy Brown's Arduino Library:
 
 http://andybrown.me.uk/2011/01/15/the-standard-template-library-stl-for-avr-with-c-streams/
-
 
 ## Using printf() and scanf()
 The ArduinoSTL header file contains code to bind a serial port of your choice to
@@ -20,7 +19,7 @@ Serial.begin()
 #include <ArduinoSTL.h>
 
 void setup() {
-  Serial.begin(9600); 
+  Serial.begin(9600);
   printf("Hello World\n");
 }
 ```
@@ -40,7 +39,7 @@ void setup() {
 
 void loop() {
   int foo;
-  if (cin >> foo) { 
+  if (cin >> foo) {
     cout << "You fed me " << foo << endl;
   }else{
     cin.clear();
@@ -48,14 +47,14 @@ void loop() {
   }
 }
 ```
-## Changing the Serial Port 
-You can change what serial port that ```cin```, ```cout``` and ```printf()``` use. You can use built-in serial ports (e.g. ```Serial1``` on Leonardo) or you can use software serial ports that implement ```Stream```. 
+## Changing the Serial Port
+You can change what serial port that ```cin```, ```cout``` and ```printf()``` use. You can use built-in serial ports (e.g. ```Serial1``` on Leonardo) or you can use software serial ports that implement ```Stream```.
 
-### Using a Built-in Port 
-In ```src/ArduinoSTL.cpp``` change the value of ```ARDUINOSTL_DEFAULT_SERIAL```. Leave the other defaults uncommented. 
+### Using a Built-in Port
+In ```src/ArduinoSTL.cpp``` change the value of ```ARDUINOSTL_DEFAULT_SERIAL```. Leave the other defaults uncommented.
 
-### Using a SoftwareSerial port. 
-Set ```ARDUINO_DEFAULT_SERAL``` to ```NULL```. Comment out the other defaults. 
+### Using a SoftwareSerial port.
+Set ```ARDUINO_DEFAULT_SERAL``` to ```NULL```. Comment out the other defaults.
 
 Here's an example sketch that uses SofwareSerial:
 
@@ -65,7 +64,7 @@ Here's an example sketch that uses SofwareSerial:
 
 SoftwareSerial mySerial(0, 1);
 
-namespace std { 
+namespace std {
   ohserialstream cout(mySerial);
   ihserialstream cin(mySerial);
 }
@@ -81,9 +80,9 @@ Comment out ```ARDUINOSTL_DEFAULT_CIN_COUT``` and nothing will be instantiated. 
 
 ## Known Issues
 
-Printing of floats and doubles using ```cout``` ignores format specifiers. 
+Printing of floats and doubles using ```cout``` ignores format specifiers.
 
-uClibc seems to be fairly complete. Strings and vectors both work, even with the limited amount of heap available to Arduino. The uClibc++ status page can be found here: 
+uClibc seems to be fairly complete. Strings and vectors both work, even with the limited amount of heap available to Arduino. The uClibc++ status page can be found here:
 
 https://cxx.uclibc.org/status.html
 
@@ -93,6 +92,6 @@ https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5:-Library-specification
 
 ## License
 
-The uClibc++ library is licensed under the LGPL. This project adopts the LGPL to be compatible with the bulk of the code that it uses. Unless otherwise noted all code is licensed under the LGPL. There's one exception: 
+The uClibc++ library is licensed under the LGPL. This project adopts the LGPL to be compatible with the bulk of the code that it uses. Unless otherwise noted all code is licensed under the LGPL. There's one exception:
 
   - src/serstream is licensed under the BSD license according to Andy Brown's wishes here: http://andybrown.me.uk/terms-and-conditions/

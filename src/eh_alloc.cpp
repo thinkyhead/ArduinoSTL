@@ -44,7 +44,6 @@ extern "C" void __cxa_free_exception(void *vptr) _UCXX_USE_NOEXCEPT{
 	free( (char *)(vptr) - sizeof(__cxa_refcounted_exception) );
 }
 
-
 extern "C" __cxa_dependent_exception * __cxa_allocate_dependent_exception() _UCXX_USE_NOEXCEPT{
 	__cxa_dependent_exception *retval;
 	// The sizeof crap is required by Itanium ABI because we need to

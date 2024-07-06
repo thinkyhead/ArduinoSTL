@@ -18,11 +18,8 @@
 
 #include "complex"
 
-
-namespace std{
-
+namespace std {
 
 	template class _UCXXEXPORT complex<float>;
-
 
 }

@@ -1,6 +1,6 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
 
-	This file is part of the uClibc++ Library.  
+	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
@@ -42,12 +42,9 @@
 
 extern "C" void __cxa_free_exception(void *thrown_exception){
 
-
-
 }
 
 extern "C" void __cxa_throw (void *thrown_exception, std::type_info *tinfo,void (*dest) (void *) ){
-
 
 }
 */

@@ -1,5 +1,4 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
-
 	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
@@ -24,7 +23,6 @@
 #include "memory"
 #include "vector"
 
-
 #ifdef __UCLIBCXX_HAS_WCHAR__
 #include "cwchar"
 #include "cwctype"
@@ -35,7 +33,7 @@
 
 #pragma GCC visibility push(default)
 
-namespace std{
+namespace std {
 
 	//Basic basic_string
 
@@ -45,8 +43,6 @@ namespace std{
 	#ifdef __UCLIBCXX_HAS_WCHAR__
 	typedef basic_string<wchar_t> wstring;
 	#endif
-
-
 
 //template<class Ch, class Tr = char_traits<Ch>, class A = allocator<Ch> > class _UCXXEXPORT basic_string
 template<class Ch, class Tr, class A> class basic_string
@@ -663,7 +659,6 @@ public:
 
 };
 
-
 //Functions
 
 template<class Ch,class Tr,class A> _UCXXEXPORT basic_string<Ch,Tr,A>::basic_string(const Ch* s, const A& al)
@@ -702,7 +697,6 @@ template<class Ch,class Tr,class A> _UCXXEXPORT basic_string<Ch,Tr,A>&
 	return *this;
 }
 
-
 template<class Ch,class Tr,class A> _UCXXEXPORT typename basic_string<Ch,Tr,A>::size_type
 	basic_string<Ch,Tr,A>::find (const basic_string<Ch,Tr,A>& str, size_type pos) const
 {
@@ -718,7 +712,6 @@ template<class Ch,class Tr,class A> _UCXXEXPORT typename basic_string<Ch,Tr,A>::
 	return npos;
 }
 
-
 template<class Ch,class Tr,class A>
 	_UCXXEXPORT basic_string<Ch, Tr, A> basic_string<Ch,Tr,A>::substr(size_type pos, size_type n) const
 {
@@ -731,9 +724,6 @@ template<class Ch,class Tr,class A>
 	}
 	return basic_string<Ch,Tr,A>(vector<Ch, A>::data_ + pos,rlen);
 }
-
-
-
 
 #ifdef __UCLIBCXX_EXPAND_STRING_CHAR__
 #ifndef __UCLIBCXX_COMPILE_STRING__
@@ -749,7 +739,6 @@ template<class Ch,class Tr,class A>
 #endif
 
 	template <> _UCXXEXPORT string & string::append(const char * s, size_type n);
-
 
 	template <> _UCXXEXPORT string::size_type string::find(const string & str, size_type pos) const;
 	template <> _UCXXEXPORT string::size_type string::find(const char* s, size_type pos) const;
@@ -786,9 +775,6 @@ template<class Ch,class Tr,class A>
 #endif
 #endif
 
-
-
-
 //typedef basic_string<char> string;
 
 template<class charT, class traits, class Allocator> _UCXXEXPORT basic_string<charT,traits,Allocator>
@@ -806,7 +792,6 @@ template<class charT, class traits, class Allocator> _UCXXEXPORT basic_string<ch
 	temp.append(rhs);
 	return temp;
 }
-
 
 template<class charT, class traits, class Allocator> _UCXXEXPORT basic_string<charT,traits,Allocator>
 	operator+(charT lhs, const basic_string<charT,traits,Allocator>& rhs)
@@ -910,7 +895,6 @@ template<class charT, class traits, class Allocator> _UCXXEXPORT bool
 	}
 	return false;
 }
-
 
 template<class charT, class traits, class Allocator> _UCXXEXPORT bool
 	operator> (const basic_string<charT,traits,Allocator>& lhs, const basic_string<charT,traits,Allocator>& rhs)
@@ -1031,10 +1015,8 @@ template <> _UCXXEXPORT string operator+(const string & lhs, const string & rhs)
 template <> _UCXXEXPORT bool operator> (const string & lhs, const string & rhs);
 template <> _UCXXEXPORT bool operator< (const string & lhs, const string & rhs);
 
-
 #endif
 #endif
-
 
 }
 

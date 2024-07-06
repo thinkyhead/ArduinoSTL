@@ -1,5 +1,4 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
-
 	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
@@ -22,7 +21,6 @@
 #ifndef __STD_HEADER_CSETJMP
 #define __STD_HEADER_CSETJMP 1
 
-
 //From GCC Header files
 #undef longjmp
 
@@ -33,12 +31,9 @@
 
 //Mine again
 
-
-namespace std{
+namespace std {
 	using ::longjmp;
 	using ::jmp_buf;
 }
 
-
 #endif
-

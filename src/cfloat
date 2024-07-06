@@ -1,5 +1,4 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
-
 	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
@@ -22,9 +21,6 @@
 #ifndef __STD_HEADER_CFLOAT
 #define __STD_HEADER_CFLOAT 1
 
-
 #include <float.h>
 
-
 #endif
-

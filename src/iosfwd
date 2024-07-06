@@ -1,5 +1,4 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
-
 	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
@@ -21,7 +20,6 @@
 #include "char_traits"
 #include "memory"
 
-
 #ifndef __HEADER_STD_IOSFWD
 #define __HEADER_STD_IOSFWD 1
 
@@ -42,10 +40,10 @@ namespace std {
 	template <class charT, class traits = char_traits<charT> > class basic_ostream;
 	template <class charT, class traits = char_traits<charT> > class basic_iostream;
 
-	template <class charT, class traits = char_traits<charT>, 
+	template <class charT, class traits = char_traits<charT>,
 		class Allocator = allocator<charT> > class basic_stringbuf;
 
-	template <class charT, class traits = char_traits<charT>, 
+	template <class charT, class traits = char_traits<charT>,
 		class Allocator = allocator<charT> > class basic_istringstream;
 
 	template <class charT, class traits = char_traits<charT>,
@@ -101,7 +99,7 @@ namespace std {
 	typedef basic_ofstream<wchar_t> wofstream;
 	typedef basic_fstream<wchar_t>  wfstream;
 #endif
-	
+
 	template <class state> class fpos;
 	typedef fpos<char_traits<char>::state_type> streampos;
 #ifdef __UCLIBCXX_HAS_WCHAR__

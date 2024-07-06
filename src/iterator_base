@@ -1,5 +1,4 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
-
 	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
@@ -24,7 +23,7 @@
 
 #pragma GCC visibility push(default)
 
-namespace std{
+namespace std {
 	template<class Iterator> struct iterator_traits;
 	template<class T> struct iterator_traits<T*>;
 
@@ -114,7 +113,6 @@ namespace std{
 		}
 	};*/
 
-
 	template <class Category, class T, class Distance, class Pointer, class Reference>
 		struct _UCXXEXPORT iterator
 	{
@@ -124,7 +122,6 @@ namespace std{
 		typedef Reference reference;
 		typedef Category  iterator_category;
 	};
-
 
 	template <class Iterator> class _UCXXEXPORT reverse_iterator
 		: public iterator<typename iterator_traits<Iterator>::iterator_category,
@@ -175,7 +172,6 @@ namespace std{
 			return *this;
 		}
 	 };
-
 
 	template <class Iterator> _UCXXEXPORT bool
 		operator==(const reverse_iterator<Iterator>& x, const reverse_iterator<Iterator>& y)
@@ -301,5 +297,3 @@ namespace std{
 #pragma GCC visibility pop
 
 #endif
-
-

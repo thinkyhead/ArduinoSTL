@@ -1,5 +1,4 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
-
 	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
@@ -20,13 +19,12 @@
 #include "basic_definitions"
 #include "exception"
 
-
 #ifndef HEADER_IMPLEMENTATION_FUNC_EXCEPTION
 #define HEADER_IMPLEMENTATION_FUNC_EXCEPTION
 
 #pragma GCC visibility push(default)
 
-namespace std{
+namespace std {
 
 	_UCXXEXPORT void __throw_bad_alloc();
 	_UCXXEXPORT void __throw_out_of_range(const char * message = 0);
@@ -38,4 +36,3 @@ namespace std{
 #pragma GCC visibility pop
 
 #endif
-

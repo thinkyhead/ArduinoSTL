@@ -18,10 +18,6 @@
 
 #include "stack"
 
-
-namespace std{
-
-
-
+namespace std {
 
 }

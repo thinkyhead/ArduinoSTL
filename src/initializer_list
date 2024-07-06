@@ -18,26 +18,25 @@
 
 */
 
-
 #ifndef __STD_HEADER_INITIALIZER_LIST
 #define __STD_HEADER_INITIALIZER_LIST
 
 #pragma GCC visibility push(default)
 
-namespace std { 
+namespace std {
 
-template<class T> 
+template<class T>
 class initializer_list {
-  
+
 private:
-  const T* array; 
-  size_t len; 
+  const T* array;
+  size_t len;
 
   // Initialize from a { ... } construct
   initializer_list(const T *a, size_t l): array(a), len(l) { }
 
 public:
-  
+
   // default constructor
   initializer_list() : array(NULL), len(0) {}
 
@@ -46,7 +45,7 @@ public:
   }
 
   const T *begin() {
-    return array; 
+    return array;
   }
 
   const T *end() {

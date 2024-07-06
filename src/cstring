@@ -1,6 +1,7 @@
 /*	Copyright (C) 2005 Garrett A. Kajmowicz
 
 	This file is part of the uClibc++ Library.
+
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
 	License as published by the Free Software Foundation; either
@@ -22,8 +23,7 @@
 #ifndef __HEADER_CSTRING
 #define __HEADER_CSTRING 1
 
-
-namespace std{
+namespace std {
 
 	using ::memchr;
 	using ::memcmp;
@@ -74,4 +74,3 @@ namespace std{
 }
 
 #endif
-

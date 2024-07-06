@@ -1,5 +1,4 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
-
 	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
@@ -25,8 +24,8 @@
 
 #pragma GCC visibility push(default)
 
-namespace std{
-	template <class InputIterator, class T> _UCXXEXPORT 
+namespace std {
+	template <class InputIterator, class T> _UCXXEXPORT
 		T accumulate(InputIterator first, InputIterator last, T init)
 	{
 		while(first != last){
@@ -36,7 +35,7 @@ namespace std{
 		return init;
 	}
 
-	template <class InputIterator, class T, class BinaryOperation> _UCXXEXPORT 
+	template <class InputIterator, class T, class BinaryOperation> _UCXXEXPORT
 		T accumulate(InputIterator first, InputIterator last, T init, BinaryOperation binary_op)
 	{
 		while(first != last){
@@ -46,8 +45,7 @@ namespace std{
 		return init;
 	}
 
-
-	template <class InputIterator1, class InputIterator2, class T> _UCXXEXPORT 
+	template <class InputIterator1, class InputIterator2, class T> _UCXXEXPORT
 		T inner_product(InputIterator1 first1, InputIterator1 last1,
 			InputIterator2 first2, T init)
 	{
@@ -60,7 +58,7 @@ namespace std{
 	}
 
 	template <class InputIterator1, class InputIterator2, class T,
-		class BinaryOperation1, class BinaryOperation2> _UCXXEXPORT 
+		class BinaryOperation1, class BinaryOperation2> _UCXXEXPORT
 		T inner_product(InputIterator1 first1, InputIterator1 last1,
 			InputIterator2 first2, T init,
 			BinaryOperation1 binary_op1,
@@ -74,7 +72,7 @@ namespace std{
 		return init;
 	}
 
-	template <class InputIterator, class OutputIterator> _UCXXEXPORT 
+	template <class InputIterator, class OutputIterator> _UCXXEXPORT
 		OutputIterator partial_sum(InputIterator first, InputIterator last,
 		OutputIterator result)
 	{
@@ -92,8 +90,7 @@ namespace std{
 		return result;
 	}
 
-
-	template <class InputIterator, class OutputIterator, class BinaryOperation> _UCXXEXPORT 
+	template <class InputIterator, class OutputIterator, class BinaryOperation> _UCXXEXPORT
 		OutputIterator partial_sum(InputIterator first, InputIterator last,
 		OutputIterator result, BinaryOperation binary_op)
 	{
@@ -111,8 +108,7 @@ namespace std{
 		return result;
 	}
 
-
-	template <class InputIterator, class OutputIterator> _UCXXEXPORT 
+	template <class InputIterator, class OutputIterator> _UCXXEXPORT
 		OutputIterator
 		adjacent_difference(InputIterator first, InputIterator last,
 			OutputIterator result)
@@ -132,8 +128,7 @@ namespace std{
 		return result;
 	}
 
-
-	template <class InputIterator, class OutputIterator, class BinaryOperation> _UCXXEXPORT 
+	template <class InputIterator, class OutputIterator, class BinaryOperation> _UCXXEXPORT
 		OutputIterator
 		adjacent_difference(InputIterator first, InputIterator last,
 			OutputIterator result, BinaryOperation binary_op)
@@ -158,4 +153,3 @@ namespace std{
 #pragma GCC visibility pop
 
 #endif
-

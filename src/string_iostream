@@ -1,5 +1,4 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
-
 	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
@@ -31,9 +30,7 @@
 
 #pragma GCC visibility push(default)
 
-namespace std{
-
-
+namespace std {
 
 template<class charT, class traits, class Allocator> _UCXXEXPORT basic_ostream<charT, traits>&
 	operator<<(basic_ostream<charT, traits>& os, const basic_string<charT,traits,Allocator>& str)
@@ -105,7 +102,7 @@ template<class charT, class traits, class Allocator> _UCXXEXPORT basic_istream<c
 		}
 		str.append(1, c);
 	}
-	return is;	
+	return is;
 }
 
 template<class charT, class traits, class Allocator> _UCXXEXPORT basic_istream<charT,traits>&
@@ -114,10 +111,8 @@ template<class charT, class traits, class Allocator> _UCXXEXPORT basic_istream<c
 	return getline(is, str, '\n');
 }
 
-
 #ifdef __UCLIBCXX_EXPAND_STRING_CHAR__
 #ifndef __UCLIBCXX_COMPILE_STRING__
-
 
 #ifdef __UCLIBCXX_EXPAND_ISTREAM_CHAR__
 template<> _UCXXEXPORT basic_istream<char, char_traits<char> >& operator>>(
@@ -125,22 +120,18 @@ template<> _UCXXEXPORT basic_istream<char, char_traits<char> >& operator>>(
 	basic_string<char, char_traits<char>, allocator<char> >& str);
 #endif
 
-
 #ifdef __UCLIBCXX_EXPAND_OSTREAM_CHAR__
 template<> _UCXXEXPORT basic_ostream<char, char_traits<char> >&
-	operator<<(basic_ostream<char, char_traits<char> >& os, 
+	operator<<(basic_ostream<char, char_traits<char> >& os,
 	const basic_string<char,char_traits<char>, std::allocator<char> >& str);
 
 #endif
 
-
 #endif
 #endif
-
 
 }
 
 #pragma GCC visibility pop
 
 #endif
-

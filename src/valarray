@@ -1,5 +1,4 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
-
 	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
@@ -27,7 +26,7 @@
 
 #pragma GCC visibility push(default)
 
-namespace std{
+namespace std {
 
 	template<class T> class valarray;
 	class slice;
@@ -38,7 +37,6 @@ namespace std{
 	template<class T> class indirect_array;
 
 	//Actual class definitions
-
 
 	class _UCXXEXPORT slice {
 	protected:
@@ -61,8 +59,6 @@ namespace std{
 			return str;
 		}
 	};
-
-
 
 	template<class T> class _UCXXEXPORT valarray {
 		friend class slice_array<T>;
@@ -413,8 +409,6 @@ namespace std{
 		}
 	};
 
-
-
 	template <class T> class _UCXXEXPORT slice_array {
 		friend class valarray<T>;
 	public:
@@ -505,7 +499,6 @@ namespace std{
 		slice s;
 	};
 
-
 	class _UCXXEXPORT gslice {
 	private:
 		size_t sta;
@@ -546,16 +539,14 @@ namespace std{
 		void operator|=(const valarray<T>& array) const;
 		void operator<<=(const valarray<T>& array) const;
 		void operator>>=(const valarray<T>& array) const;
- 
-		void operator=(const T&);  
+
+		void operator=(const T&);
 
 	private:
 		gslice_array();
 		gslice_array(const gslice_array<T>&);
     		gslice_array<T>& operator= (const gslice_array<T>& array);
 	};
-
-
 
 	template<class T> valarray<T> operator* (const valarray<T>& lhs, const valarray<T>& rhs){
 		valarray<T> retval(lhs);

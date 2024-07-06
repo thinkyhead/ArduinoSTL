@@ -20,11 +20,10 @@
 
 #define __UCLIBCXX_COMPILE_CHAR_TRAITS__ 1
 
-
 #include "basic_definitions"
 #include "char_traits"
 
-namespace std{
+namespace std {
 
 _UCXXEXPORT const char_traits<char>::char_type* char_traits<char>::find(const char_type* s, int n, const char_type& a){
 	for(int i=0; i < n; i++){
@@ -50,8 +49,6 @@ _UCXXEXPORT char_traits<char>::char_type char_traits<char>::to_char_type(const i
 	//Out of range
 	return 0;
 }
-
-
 
 #ifdef __UCLIBCXX_HAS_WCHAR__
 

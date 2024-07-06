@@ -16,22 +16,18 @@
 	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-
-
 #include "memory"
 #include "utility"
 #include "iterator"
 #include "functional"
 #include "list"
 
-
 #ifndef __STD_HEADER_ASSOCIATIVE_BASE
 #define __STD_HEADER_ASSOCIATIVE_BASE
 
 #pragma GCC visibility push(default)
 
-namespace std{
-
+namespace std {
 
 /*
  *	The basic premise here is that most of the code used by map, multimap, set and
@@ -72,7 +68,6 @@ public:
 	typedef _associative_citer<value_type, Compare, Allocator>	const_iterator;
 	typedef typename std::reverse_iterator<iterator>		reverse_iterator;
 	typedef typename std::reverse_iterator<const_iterator>		const_reverse_iterator;
-
 
 	explicit __base_associative(const Compare& comp, const Allocator& A, const key_type (*v_to_k)(const value_type))
 		: c(comp), value_to_key(v_to_k) { }
@@ -125,7 +120,6 @@ public:
 	const_reverse_iterator rend() const{
 		return const_reverse_iterator(begin());
 	}
-
 
 	iterator lower_bound(const key_type &x);
 	const_iterator lower_bound(const key_type &x) const;
@@ -231,7 +225,6 @@ protected:
 
 };
 
-
 /*
  * Tree iterators for the base associative class
  */
@@ -301,7 +294,6 @@ public:
 		return base_iter;
 	}
 };
-
 
 template<class ValueType, class Compare, class Allocator> class _associative_iter
 	: public std::iterator<
@@ -387,10 +379,8 @@ public:
 
 };
 
-
 	// The lower_bound code is really crappy linear search.  However, it is a dead
 	// simple implementation (easy to audit).  It can also be easily replaced.
-
 
 	template <class Key, class ValueType, class Compare, class Allocator>
 		typename __base_associative<Key, ValueType, Compare, Allocator>::iterator
@@ -439,7 +429,6 @@ public:
 		return retval;
 	}
 
-
 	template <class Key, class ValueType, class Compare, class Allocator>
 		void __base_associative<Key, ValueType, Compare, Allocator>::swap(__base_associative<Key, ValueType, Compare, Allocator>& m)
 	{
@@ -449,7 +438,6 @@ public:
 
 		m.backing.swap(backing);
 	}
-
 
 template<class Key, class ValueType, class Compare, class Allocator> class _UCXXEXPORT __single_associative :
 	public __base_associative<Key, ValueType, Compare, Allocator>
@@ -544,7 +532,6 @@ public:
 
 };
 
-
 template<class Key, class ValueType, class Compare, class Allocator> class _UCXXEXPORT __multi_associative :
 	public __base_associative<Key, ValueType, Compare, Allocator>
 {
@@ -588,7 +575,6 @@ public:
 	using base::operator=;
 	using base::operator==;
 
-
 	explicit __multi_associative(const Compare& comp, const Allocator& A, const key_type (*v_to_k)(const value_type))
 		: base(comp, A, v_to_k) { }
 
@@ -628,12 +614,8 @@ public:
 	}
 };
 
-
-
-
 }
 
 #pragma GCC visibility pop
 
 #endif	//__STD_HEADER_ASSOCIATIVE_BASE
-

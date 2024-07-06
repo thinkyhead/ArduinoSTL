@@ -19,8 +19,6 @@
 
 #include "associative_base"
 
-namespace std{
-
-
+namespace std {
 
 }

@@ -1,9 +1,9 @@
 /*---------------------
- * 
+ *
  * ArduinoSTL Core Library
  *
  * This header has some glue to make STL and Streams work from a sketch.
- * 
+ *
  */
 
 #ifndef ARDUINOSTL_M_H
@@ -20,12 +20,12 @@ namespace std
   extern ihserialstream cin;
 }
 
-#if defined(ARDUINO_ARCH_AVR)
+#ifdef ARDUINO_ARCH_AVR
 
 class ArduinoSTL_STDIO {
 public:
-  // Initialize STDIO using a pointer to whatever Serial is. 
-  // Serial.begin() must be called at some point. 
+  // Initialize STDIO using a pointer to whatever Serial is.
+  // Serial.begin() must be called at some point.
   ArduinoSTL_STDIO(Stream *u) : file(NULL) {
     connect(u);
   }
@@ -33,7 +33,7 @@ public:
   ArduinoSTL_STDIO(Stream &u) : file(NULL) {
     connect(u);
   }
-  
+
   Stream *getUart() {
     return uart;
   }
@@ -43,10 +43,10 @@ public:
   inline void connect(Stream &u) {
     connect(static_cast<Stream*>(&u));
   }
-  
+
 private:
   Stream *uart;
-  FILE *file; 
+  FILE *file;
 };
 
 extern ArduinoSTL_STDIO ArduinoSTL_Serial;

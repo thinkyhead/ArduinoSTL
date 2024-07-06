@@ -231,4 +231,3 @@ namespace std {
 }
 
 #endif	//__STD_HEADER_CMATH
-

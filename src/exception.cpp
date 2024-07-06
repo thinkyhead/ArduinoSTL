@@ -27,11 +27,10 @@
 
 #ifdef __UCLIBCXX_EXCEPTION_SUPPORT__
 
-namespace std{
+namespace std {
 	_UCXXEXPORT static char * __std_exception_what_value = "exception";
 
 	//We are providing our own versions to be sneaky
-
 
 	_UCXXEXPORT exception::~exception() _UCXX_USE_NOEXCEPT{
 		//Empty function
@@ -45,8 +44,6 @@ namespace std{
 
 	}
 
-
 }
-
 
 #endif

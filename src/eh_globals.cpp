@@ -26,7 +26,6 @@
 
 //The following functionality is derived from reading of the GNU libstdc++ code and making it...simple
 
-
 namespace __cxxabiv1{
 
 static __UCLIBCXX_TLS __cxa_eh_globals eh_globals;

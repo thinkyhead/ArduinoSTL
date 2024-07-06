@@ -1,5 +1,4 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
-
 	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
@@ -26,7 +25,7 @@
 
 #pragma GCC visibility push(default)
 
-namespace std{
+namespace std {
 	class _UCXXEXPORT bad_alloc : public exception {};
 
 	struct _UCXXEXPORT nothrow_t {};
@@ -35,7 +34,6 @@ namespace std{
 	typedef void (*new_handler)();
 	_UCXXEXPORT new_handler set_new_handler(new_handler new_p) _UCXX_USE_NOEXCEPT;
 }
-
 
 _UCXXEXPORT void* operator new(std::size_t numBytes) _UCXX_THROW(std::bad_alloc);
 _UCXXEXPORT void operator delete(void* ptr) _UCXX_USE_NOEXCEPT;
@@ -67,4 +65,3 @@ inline void operator delete[](void* , void *) _UCXX_USE_NOEXCEPT {}
 #pragma GCC visibility pop
 
 #endif
-

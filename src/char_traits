@@ -1,6 +1,7 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
 
 	This file is part of the uClibc++ Library.
+
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
 	License as published by the Free Software Foundation; either
@@ -29,8 +30,8 @@
 #ifndef __HEADER_CHAR_TRAITS
 #define __HEADER_CHAR_TRAITS 1
 
-namespace std{
-	/* Inlining all wrapped function calls to shrink the amount of code generated*/	
+namespace std {
+	/* Inlining all wrapped function calls to shrink the amount of code generated*/
 	//Typedefs to use for stuff
 	typedef signed int char_traits_off_type;
 
@@ -44,7 +45,7 @@ namespace std{
 		typedef char_traits_off_type off_type;
 		typedef char_traits_off_type pos_type;
 		typedef char state_type;
-		
+
 		inline static void assign(char_type & c, const char_type & d) { c = d; }
 
 		static bool eq(const char_type& c1, const char_type& c2);
@@ -61,7 +62,6 @@ namespace std{
 			}
 			return false;
 		}
-
 
 		inline static bool lt(const char_type& c1, const char_type& c2){
 			if(strncmp(&c1, &c2, 1) < 0){
@@ -110,7 +110,6 @@ namespace std{
 			return a;
 		}
 	};
-
 
 #ifdef __UCLIBCXX_HAS_WCHAR__
 	template<> struct _UCXXEXPORT char_traits<wchar_t> {
@@ -195,4 +194,3 @@ namespace std{
 }
 
 #endif
-

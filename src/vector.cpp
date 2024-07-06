@@ -1,5 +1,4 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
-
 	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
@@ -19,11 +18,9 @@
 
 #define __UCLIBCXX_COMPILE_VECTOR__ 1
 
-
 #include "vector"
 
-namespace std{
-
+namespace std {
 
 #ifdef __UCLIBCXX_EXPAND_VECTOR_BASIC__
 
@@ -65,7 +62,6 @@ namespace std{
 
 #elif defined __UCLIBCXX_EXPAND_STRING_CHAR__
 
-
 #ifdef __UCLIBCXX_EXPAND_CONSTRUCTORS_DESTRUCTORS__
 	template _UCXXEXPORT vector<char, allocator<char> >::vector(const allocator<char>& al);
 	template _UCXXEXPORT vector<char, allocator<char> >::vector(size_type n, const char & value, const allocator<char> & al);
@@ -76,8 +72,5 @@ namespace std{
 	template _UCXXEXPORT void vector<char, allocator<char> >::resize(size_type sz, const char & c);
 
 #endif
-
-
-
 
 }

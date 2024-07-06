@@ -19,11 +19,6 @@
 
 #include "iomanip"
 
-namespace std{
-
-
-
+namespace std {
 
 }
-
-

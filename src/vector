@@ -31,7 +31,7 @@
 
 #pragma GCC visibility push(default)
 
-namespace std{
+namespace std {
 
 	template <class T, class Allocator = allocator<T> > class vector;
 	template <class T, class Allocator> bool operator==(const vector<T,Allocator>& x, const vector<T,Allocator>& y);
@@ -112,7 +112,6 @@ namespace std{
 			}
 
 			reserve(x.elements);	//Make sure that we have enough actual memory
-
 
 			//Copy as many elements as possible
 
@@ -369,8 +368,6 @@ namespace std{
 		Allocator a;
 	};
 
-
-
 	//Here go template instantiations
 
 	template<class T, class Allocator> _UCXXEXPORT vector<T, Allocator>::~vector(){
@@ -379,7 +376,6 @@ namespace std{
 		}
 		a.deallocate(data_, data_size);
 	}
-
 
 	template<class T, class Allocator> _UCXXEXPORT void vector<T, Allocator>::reserve(size_type n){
 		if(n > data_size){	//We never shrink...
@@ -421,10 +417,8 @@ namespace std{
 		}
 	}
 
-
 #ifndef __UCLIBCXX_COMPILE_VECTOR__
 #ifdef __UCLIBCXX_EXPAND_VECTOR_BASIC__
-
 
 #ifdef __UCLIBCXX_EXPAND_CONSTRUCTORS_DESTRUCTORS__
 	template<> _UCXXEXPORT vector<char, allocator<char> >::vector(const allocator<char>& al);
@@ -477,8 +471,6 @@ namespace std{
 
 #endif
 #endif
-
-
 
 	template <class T, class Allocator> _UCXXEXPORT bool
 		operator==(const vector<T,Allocator>& x, const vector<T,Allocator>& y)
@@ -533,4 +525,3 @@ namespace std{
 #pragma GCC visibility pop
 
 #endif
-

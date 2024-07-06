@@ -17,14 +17,8 @@
 
 */
 
-
 #include "utility"
 
-
-namespace std{
-
-
+namespace std {
 
 }
-
-

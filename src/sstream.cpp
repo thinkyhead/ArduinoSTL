@@ -1,5 +1,4 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
-
 	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
@@ -21,7 +20,7 @@
 
 #include "sstream"
 
-namespace std{
+namespace std {
 
 #ifdef __UCLIBCXX_EXPAND_SSTREAM_CHAR__
 
@@ -55,5 +54,3 @@ namespace std{
 #endif
 
 }
-
-

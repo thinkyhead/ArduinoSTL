@@ -1,5 +1,4 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
-
 	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
@@ -24,12 +23,12 @@
 #include "utility"
 #include "cstdio"
 
-#ifndef HEADER_STD_MEMORY
-#define HEADER_STD_MEMORY 1
+#ifndef __HEADER_STD_MEMORY
+#define __HEADER_STD_MEMORY 1
 
 #pragma GCC visibility push(default)
 
-namespace std{
+namespace std {
 
 template <class T> class allocator;
 	// Specialize for void:
@@ -47,7 +46,7 @@ public:
 	typedef T value_type;
 	typedef size_t size_type;
 	typedef ptrdiff_t difference_type;
-	
+
 	typedef T* pointer;
 	typedef const T* const_pointer;
 
@@ -56,7 +55,7 @@ public:
 
 	pointer address(reference r) const { return &r; }
 	const_pointer address(const_reference r) const { return &r; }
-	
+
 	allocator() _UCXX_USE_NOEXCEPT{}
 	template <class U> allocator(const allocator<U>& ) _UCXX_USE_NOEXCEPT;
 	~allocator() _UCXX_USE_NOEXCEPT{}
@@ -114,7 +113,6 @@ template <class T> _UCXXEXPORT pair<T*, ptrdiff_t> get_temporary_buffer(ptrdiff_
 template <class T> _UCXXEXPORT void return_temporary_buffer(T* p){
 	free(p);
 }
-
 
 template <class T> class _UCXXEXPORT auto_ptr{
 
@@ -185,7 +183,7 @@ public:
 		object = 0;
 		return retval;
 	}
-	
+
 };
 
 }	//namespace std
@@ -193,4 +191,3 @@ public:
 #pragma GCC visibility pop
 
 #endif
-

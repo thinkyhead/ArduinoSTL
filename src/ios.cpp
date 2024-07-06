@@ -1,5 +1,4 @@
 /*	Copyright (C) 2004 Garrett A. Kajmowicz
-
 	This file is part of the uClibc++ Library.
 
 	This library is free software; you can redistribute it and/or
@@ -24,8 +23,7 @@
 #include "istream"
 #include "cstdio"
 
-namespace std{
-
+namespace std {
 
 #ifdef __UCLIBCXX_SUPPORT_CDIR__
 	_UCXXLOCAL int ios_base::Init::init_cnt = 0;	//Needed to ensure the static value is created
@@ -81,7 +79,6 @@ namespace std{
 #ifdef __UCLIBCXX_SUPPORT_WCLOG__
 	_UCXXEXPORT wostream wclog(&_wclog_filebuf);
 #endif
-
 
 	_UCXXEXPORT ios_base::Init::Init(){
 		if(init_cnt == 0){	//Need to construct cout et al
@@ -141,14 +138,12 @@ namespace std{
 	}
 #endif
 
-
 #ifdef __UCLIBCXX_EXPAND_IOS_CHAR__
 
 	template _UCXXEXPORT void basic_ios<char, char_traits<char> >::clear(iostate state);
 	template _UCXXEXPORT void basic_ios<char, char_traits<char> >::setstate(iostate state);
 
 #endif
-
 
 	_UCXXEXPORT ios_base::fmtflags ios_base::flags(fmtflags fmtfl){
 		fmtflags temp = mformat;
@@ -180,9 +175,6 @@ namespace std{
 		locale retval = mLocale;
 		mLocale = loc;
 		return retval;
-	}	
+	}
 
 }
-
-
-
