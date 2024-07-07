@@ -16,12 +16,16 @@
 // ArduinoSTL_serial.connect().
 //
 
-#define ARDUINOSTL_DEFAULT_SERIAL Serial
-#define ARDUINOSTL_DEFAULT_CIN_COUT
+#ifndef ARDUINOSTL_DEFAULT_SERIAL
+  #define ARDUINOSTL_DEFAULT_SERIAL Serial
+#endif
+#ifndef ARDUINOSTL_DEFAULT_CIN_COUT
+  #define ARDUINOSTL_DEFAULT_CIN_COUT 1
+#endif
 
 using namespace std;
 
-#ifdef ARDUINOSTL_DEFAULT_CIN_COUT
+#if ARDUINOSTL_DEFAULT_CIN_COUT
 // Create cout and cin.. there doesn't seem to be a way
 // to control what serial device at runtime. Grr.
 namespace std
